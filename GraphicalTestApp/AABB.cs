@@ -41,13 +41,13 @@ namespace GraphicalTestApp
         public bool DetectCollision(AABB other)
         {
             //## Implement DetectCollision(AABB) ##//
-            return false;
+            return !(Top <= other.Top || Bottom <= other.Bottom || Left <= other.Left || Right <= other.Right);
         }
 
         public bool DetectCollision(Vector3 point)
         {
             //## Implement DetectCollision(Vector3) ##//
-            return false;
+            return !(point.x < Bottom || point.y < Left || point.x > Right || point.y > Top);
         }
 
         //Draw the bounding box to the screen
